@@ -32,10 +32,11 @@ services:
     mysql:
         image: mysql:8.0
         container_name: mysql8
+        restart: always
         ports:
             - "13306:3306"
         volumes:
-            - /home/docker/data/mysql/:/var/lib/mysql/
+            - ./data/mysql/:/var/lib/mysql/
             - ./mysql/:/etc/mysql/conf.d/
         environment:
             TZ: Asia/Tokyo
