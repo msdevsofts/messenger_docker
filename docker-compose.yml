@@ -38,6 +38,7 @@ services:
         volumes:
             - ./data/mysql/:/var/lib/mysql/
             - ./mysql/:/etc/mysql/conf.d/
+        command: --sql-mode="STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
         environment:
             TZ: Asia/Tokyo
             MYSQL_ROOT_PASSWORD: root
